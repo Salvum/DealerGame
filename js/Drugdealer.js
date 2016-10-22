@@ -2,7 +2,7 @@
 var model = {
     boardWidthSize: 4,
     boardHeightSize: 9,
-    numShips: 3,
+    numDrugDealers: 3,
     shipLength: 3,
     shipsSunk: 0,
     drugDealers: [{ locations: ["05", "06", "07"], hits: ["", "", ""] },
