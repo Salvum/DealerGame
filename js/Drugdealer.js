@@ -9,7 +9,7 @@ var model = {
     drugDealers:
         [{ locations: ["05", "06", "07"], hits: ["", "", ""] },
          { locations: ["15", "25", "35"], hits: ["", "", ""] },
-         { locations: ["33", "23", "22"], hits: ["", "", ""] }
+         { locations: ["33", "23", "13"], hits: ["", "", ""] }
     ],
     fire : function ( guess ){
         for (var i = 0; i < this.numDrugDealers; i++){
@@ -53,15 +53,56 @@ var view = {
         cell.setAttribute("class", "miss");
     }
 };
-
-
-model.fire("13");
-model.fire("06");
-model.fire("16");
-model.fire("26");
-model.fire("34");
-model.fire("24");
-model.fire("14");
-model.fire("12");
-model.fire("11");
-model.fire("30");
+var control = {
+    quesses: 0,
+    processGuess: function(guess) {
+        var location = parseGuess(guess);
+        if (location) {
+            this.guesses++;
+            var hit = model.fire(location);
+            if (hit && model.deathDrugDealer === model.numDrugDealers) {
+                view.displayMessage("Я уничтожил все отряды барыг, вычищаю мусор города");
+            }
+        }
+    }
+};
+function parseGuess (guess) {
+    var alphabet = ["A", "B", "C", "D"];
+    if (guess === null || guess.length !== 2) {
+        alert("Опс, таких координат в комнате нет")
+    } else {
+        var firstChar = guess.charAt(0);
+        var row = alphabet.indexOf(firstChar);
+        var column = guess.charAt(1);
+        if (isNaN(row) || isNaN(column)) {
+            alert("Таких значений нет");
+        } else if (row < 0 || row >= model.boardWidthSize ||
+            column < 0 || column >= model.boardHeightSize) {
+            alert("Вы ошиблись данными");
+        } else {
+            return row + column;
+        }
+    }
+    return null;
+}
+function init() {
+    var fireButton = document.getElementById("fireButton");
+    fireButton.onclick = handleFireButton;
+    var guessInput = document.getElementById("guessInput");
+    guessInput.onkeypress = handleKeyPress;
+    var guess = guessInput.value;
+}
+function handleFireButton() {
+    var guessInput = document.getElementById("guessInput");
+    var guess = guessInput.value;
+    control.processGuess(guess);
+    guessInput.value = "";
+}
+function handleKeyPress(e) {
+    var fireButton = document.getElementById("fireButton");
+    if (e.keyCode === 13) {
+        fireButton.click();
+        return false;
+    }
+}
+window.onload = init;
