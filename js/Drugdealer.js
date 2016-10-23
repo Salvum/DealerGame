@@ -105,4 +105,15 @@ function handleKeyPress(e) {
         return false;
     }
 }
+var RandomDrugDealers = {
+    generateDrugDealerLocation: function (){
+
+    },
+    generateDrugDealers: function () {
+
+    },
+    collisionDrugDealers: function () {
+
+    }
+};
 window.onload = init;
