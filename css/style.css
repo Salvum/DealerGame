@@ -1,0 +1,65 @@
+body {
+    background-color: black;
+    }
+form {
+    position: absolute;
+    bottom: 481px;
+    right: 1px;
+    padding: 15px;
+    background-color: rgb(235, 245, 101);
+    }
+form input {
+    background-color: rgb(152, 207, 113);
+    border-color: rgb(83, 175, 19);
+    font-size: 1em;
+    }
+table {
+    position: absolute;
+    left: 242px;
+    top: 203px;
+    border-spacing: 0px;
+td {
+    width: 118.5px;
+    height: 119px;
+    }
+    /* id */
+#board {
+    position: relative;
+    width: 1324px;
+    height: 680px;
+    margin:  -90px 50px 0px -20px;
+    }
+#messageMavashi {
+    position: absolute;
+    top: 173px;
+    left: 167px;
+    color: rgb(0, 0, 0);
+    width: auto;
+    background: white;
+    height: 20px;
+    border-radius: 5px;
+    }
+#stat {
+    position: absolute;
+    top: 420px;
+    left: 31px;
+    color: rgb(0, 0, 0);
+    width: 186px;
+    background: white;
+    height: 130px;
+    border-radius: 12px;
+    }
+#mavashi {
+    position: absolute;
+    top: 70px;
+    left:-5px;
+    }
+.status {
+
+    }
+.hit {
+    background: url("/image/hit.png") no-repeat center center;
+    }
+.miss {
+    background: url("/image/miss.png") no-repeat center center;
+    }
