@@ -18,6 +18,7 @@ table {
     left: 242px;
     top: 203px;
     border-spacing: 0px;
+}
 td {
     width: 118.5px;
     height: 119px;
@@ -52,14 +53,11 @@ td {
 #mavashi {
     position: absolute;
     top: 70px;
-    left:-5px;
-    }
-.status {
-
+    left: -5px;
     }
 .hit {
-    background: url("/image/hit.png") no-repeat center center;
-    }
+    background: url("../image/hit.png") no-repeat center center;
+}
 .miss {
-    background: url("/image/miss.png") no-repeat center center;
-    }
+    background: url("../image/miss.png") no-repeat center center;
+}

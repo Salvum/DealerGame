@@ -42,7 +42,7 @@ isDead: function(drugDealer) {
 var view = {
     displayMessage: function ( msg ) {
         var messageMavashi = document.getElementById("messageMavashi");
-        messageMavashi.innerHTML ="";
+        messageMavashi.innerHTML = msg;
     },
     displayHit: function ( location ) {
         var cell = document.getElementById(location);
@@ -53,11 +53,15 @@ var view = {
         cell.setAttribute("class", "miss");
     }
 };
-model.fire("00");
-model.fire("11");
-model.fire("12");
-model.fire("33");
+
+
+model.fire("13");
+model.fire("06");
+model.fire("16");
+model.fire("26");
 model.fire("34");
-model.fire("21");
-model.fire("05");
-model.fire("02");
+model.fire("24");
+model.fire("14");
+model.fire("12");
+model.fire("11");
+model.fire("30");
